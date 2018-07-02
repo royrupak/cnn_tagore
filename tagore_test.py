@@ -63,7 +63,7 @@ img_data /= 255
 print (img_data[0])
 
 
-names = ['<<<<<It is a picture of Rabindranath Tagore>>>>>','<<<<<it is not a picture Rabindranath>>>>>']
+names = ['<<<<<It is a picture of Rabindranath Tagore>>>>>','<<<<<it is not a picture of Rabindranath Tagore>>>>>']
 print(names)
 
 
@@ -88,7 +88,7 @@ num_classes = 2
 
 # Create the model
 model = Sequential()
-model.add(Reshape((1, 128, 128), input_shape=input_shape))
+model.add(Reshape((1, 128, 128), input_shape=input_shape))# reshape the input to 4 dim for convolution 2D
 
 model.add(Conv2D(32, (3, 3), padding='same', activation='relu', kernel_constraint=maxnorm(3)))
 model.add(Dropout(0.2))
